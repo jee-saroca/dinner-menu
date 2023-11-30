@@ -1,4 +1,13 @@
+import tkinter as tk
 from tkinter import *
+
+dinnerMenu = Tk()
+dinnerMenu.geometry("450x550")
+dinnerMenu.title("Dinner Menu")
+
+
+
+
 # someone create a home page, Ex: Welcome to The Dinner Menu (or some made up restaurant)
 
 
@@ -31,7 +40,7 @@ sup
 # someone create a dinner layout with a table and each chosen food.
 
 
-
+dinnerMenu.mainloop()
 # someone create a receipt
 
 
