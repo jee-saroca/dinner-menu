@@ -1,3 +1,4 @@
+from tkinter import *
 # someone create a home page, Ex: Welcome to The Dinner Menu (or some made up restaurant)
 
 
