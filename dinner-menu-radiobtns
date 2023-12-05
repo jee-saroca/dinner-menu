@@ -1,0 +1,111 @@
+import tkinter as tk
+from tkinter import *
+
+dinnerMenu = Tk()
+dinnerMenu.geometry("450x550")
+dinnerMenu.title("Dinner Menu")
+dinnerMenu.config(bg="#f9f1f1") # "#f9f1f1" is off white kinda
+
+# APPETIZERS SECTION
+
+appetizers_title = Label(dinnerMenu,text="Appetizers",
+                bg="#f9f1f1",fg="black",
+                font=("BookmanOldStyle",40)) # this could really be any font tbh, I couldn't find an appealing one
+
+appetizers_title.pack(anchor=CENTER)
+
+appVar = IntVar()
+rad_wing = Radiobutton(dinnerMenu, text="wings", variable=appVar, value=1)
+rad_wing.pack(anchor=CENTER)
+rad_wing.config(bg="#f9f1f1")
+rad_fries = Radiobutton(dinnerMenu, text="fries", variable=appVar, value=2)
+rad_fries.pack(anchor=CENTER)
+rad_fries.config(bg="#f9f1f1")
+rad_oysters = Radiobutton(dinnerMenu, text="oysters", variable=appVar, value=3)
+rad_oysters.pack(anchor=CENTER)
+rad_oysters.config(bg="#f9f1f1")
+
+
+def afterApp(): # button to add the drinks
+    afterBtnApp.destroy() # destroys afterApp to replace with  drinks_title.pack
+    drinks_title.pack(anchor=CENTER) # with this
+    rad_mimosa.pack(anchor=CENTER)
+    rad_sangria.pack(anchor=CENTER)
+    rad_wine.pack(anchor=CENTER)
+    rad_margarita.pack(anchor=CENTER)
+    drinks_title.pack(anchor=CENTER)
+    afterBtnDrink.pack(anchor=S)
+
+afterBtnApp = Button(dinnerMenu,text="Next",command=afterApp,
+                     bg="#f9f1f1")
+afterBtnApp.pack(anchor=S)
+
+# DRINKS
+
+drinks_title = Label(dinnerMenu,text="Drinks",
+                bg="#f9f1f1",fg="black",
+                font=("BookmanOldStyle",40))
+
+drinkVar = IntVar()
+rad_mimosa = Radiobutton(dinnerMenu, text="mimosa", variable=drinkVar, value=1)
+rad_mimosa.config(bg="#f9f1f1")
+rad_sangria = Radiobutton(dinnerMenu, text="sangria", variable=drinkVar, value=2)
+rad_sangria.config(bg="#f9f1f1")
+rad_wine = Radiobutton(dinnerMenu, text="wine", variable=drinkVar, value=3)
+rad_wine.config(bg="#f9f1f1")
+rad_margarita = Radiobutton(dinnerMenu, text="margarita", variable=drinkVar, value=4)
+rad_margarita.config(bg="#f9f1f1")
+
+def afterDrink():
+    afterBtnDrink.destroy()
+    main_title.pack(anchor=CENTER)
+    rad_chicken.pack(anchor=CENTER)
+    rad_fish.pack(anchor=CENTER)
+    rad_beef.pack(anchor=CENTER)
+    main_title.pack(anchor=CENTER)
+    afterBtnMain.pack(anchor=S)
+    
+afterBtnDrink = Button(dinnerMenu, text="Next", command=afterDrink)
+
+# MAIN COURSE
+
+main_title = Label(dinnerMenu,text="Main Courses",
+                bg="#f9f1f1",fg="black",
+                font=("BookmanOldStyle",40)) # this could really be any font tbh, I couldn't find an appealing one
+
+appVar = IntVar()
+rad_chicken = Radiobutton(dinnerMenu, text="Fried Chicken", variable=appVar, value=1)
+rad_chicken.config(bg="#f9f1f1")
+rad_fish = Radiobutton(dinnerMenu, text="Baked Salmon", variable=appVar, value=2)
+rad_fish.config(bg="#f9f1f1")
+rad_beef = Radiobutton(dinnerMenu, text="Filet Mignon", variable=appVar, value=3)
+rad_beef.config(bg="#f9f1f1")
+
+def afterMain():
+    afterBtnMain.destroy()
+    dessert_title.pack(anchor=CENTER)
+    rad_cake.pack(anchor=CENTER)
+    rad_cream.pack(anchor=CENTER)
+    dessert_title.pack(anchor=CENTER)
+    afterBtnDessert.pack(anchor=S)
+
+afterBtnMain = Button(dinnerMenu, text="Next", command=afterMain)
+
+# DESSERTS
+
+dessert_title = Label(dinnerMenu,text="Dessert",
+                bg="#f9f1f1",fg="black",
+                font=("BookmanOldStyle",40)) # this could really be any font tbh, I couldn't find an appealing one
+
+appVar = IntVar()
+rad_cake = Radiobutton(dinnerMenu, text="Double Chocolate Cake", variable=appVar, value=1)
+rad_cake.config(bg="#f9f1f1")
+rad_cream = Radiobutton(dinnerMenu, text="Vanilla Ice Cream", variable=appVar, value=2)
+rad_cream.config(bg="#f9f1f1")
+
+def afterDessert(): # the final button to display pop up window of food
+    afterBtnMain.destroy()
+
+afterBtnDessert = Button(dinnerMenu, text="Order", command=afterDessert)
+
+dinnerMenu.mainloop()
