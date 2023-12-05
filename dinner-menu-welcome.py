@@ -5,7 +5,9 @@ dinnerMenu = Tk()
 dinnerMenu.geometry("450x550")
 dinnerMenu.title("Dinner Menu")
 
-welcome = Label(text="Welcome to The Dinner Place")
+welcome = Label(dinnerMenu,text="Welcome to \nThe Dinner Place",
+                bg='#f9f1f1',fg='black',
+                font=('BookmanOldStyle',40))
 welcome.pack()
 
 dinnerMenu.mainloop()
