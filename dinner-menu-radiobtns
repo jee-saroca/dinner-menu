@@ -15,13 +15,13 @@ appetizers_title = Label(dinnerMenu,text="Appetizers",
 appetizers_title.pack(anchor=CENTER)
 
 appVar = IntVar()
-rad_wing = Radiobutton(dinnerMenu, text="wings", variable=appVar, value=1)
+rad_wing = Radiobutton(dinnerMenu, text="Hot Wings", variable=appVar, value=1)
 rad_wing.pack(anchor=CENTER)
 rad_wing.config(bg="#f9f1f1")
-rad_fries = Radiobutton(dinnerMenu, text="fries", variable=appVar, value=2)
+rad_fries = Radiobutton(dinnerMenu, text="French Fries", variable=appVar, value=2)
 rad_fries.pack(anchor=CENTER)
 rad_fries.config(bg="#f9f1f1")
-rad_oysters = Radiobutton(dinnerMenu, text="oysters", variable=appVar, value=3)
+rad_oysters = Radiobutton(dinnerMenu, text="Raw Oysters", variable=appVar, value=3)
 rad_oysters.pack(anchor=CENTER)
 rad_oysters.config(bg="#f9f1f1")
 
@@ -47,13 +47,13 @@ drinks_title = Label(dinnerMenu,text="Drinks",
                 font=("BookmanOldStyle",40))
 
 drinkVar = IntVar()
-rad_mimosa = Radiobutton(dinnerMenu, text="mimosa", variable=drinkVar, value=1)
+rad_mimosa = Radiobutton(dinnerMenu, text="Virgin Mimosa", variable=drinkVar, value=1)
 rad_mimosa.config(bg="#f9f1f1")
-rad_sangria = Radiobutton(dinnerMenu, text="sangria", variable=drinkVar, value=2)
+rad_sangria = Radiobutton(dinnerMenu, text="Virgin Sangria", variable=drinkVar, value=2)
 rad_sangria.config(bg="#f9f1f1")
-rad_wine = Radiobutton(dinnerMenu, text="wine", variable=drinkVar, value=3)
+rad_wine = Radiobutton(dinnerMenu, text="Virgin Wine", variable=drinkVar, value=3)
 rad_wine.config(bg="#f9f1f1")
-rad_margarita = Radiobutton(dinnerMenu, text="margarita", variable=drinkVar, value=4)
+rad_margarita = Radiobutton(dinnerMenu, text="Virgin Margarita", variable=drinkVar, value=4)
 rad_margarita.config(bg="#f9f1f1")
 
 def afterDrink():
