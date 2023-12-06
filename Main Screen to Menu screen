@@ -1,0 +1,158 @@
+import tkinter as tk
+from tkinter import *
+from PIL import Image, ImageTk
+
+
+# Context: Anything with a 1 is about page 1, things with 2 are second page things 
+
+# 1. Start Screen code, color, size, title
+mainScreen = tk.Tk()
+mainScreen.geometry("500x600")
+mainScreen.title("Dinner Menu")
+mainScreen.configure(bg="#343030")
+
+# 2.2 Function
+def nextContent():
+    appetizers_title = Label(selectionFrame,text="Appetizers",
+                bg="#f9f1f1",fg="black",
+                font=("BookmanOldStyle",40)) 
+    appetizers_title.pack(anchor="center")
+
+    appVar = IntVar()
+    rad_wing = Radiobutton(selectionFrame, text="Hot Wings", variable=appVar, value=1)
+    rad_wing.pack(anchor=CENTER)
+    rad_wing.config(bg="#f9f1f1")
+    rad_fries = Radiobutton(selectionFrame, text="French Fries", variable=appVar, value=2)
+    rad_fries.pack(anchor=CENTER)
+    rad_fries.config(bg="#f9f1f1")
+    rad_oysters = Radiobutton(selectionFrame, text="Raw Oysters", variable=appVar, value=3)
+    rad_oysters.pack(anchor=CENTER)
+    rad_oysters.config(bg="#f9f1f1")
+
+    def afterApp(): # button to add the drinks
+        afterBtnApp.destroy() # destroys afterApp to replace with  drinks_title.pack
+        drinks_title.pack(anchor=CENTER) # with this
+        rad_mimosa.pack(anchor=CENTER)
+        rad_sangria.pack(anchor=CENTER)
+        rad_wine.pack(anchor=CENTER)
+        rad_margarita.pack(anchor=CENTER)
+        drinks_title.pack(anchor=CENTER)
+        afterBtnDrink.pack(anchor=S)
+
+    #Button code for next items
+    afterBtnApp = Button(selectionFrame,text="Next",command=afterApp,
+                     bg="#f9f1f1")
+    afterBtnApp.pack(anchor=S)
+    # Drinks here
+    drinks_title = Label(selectionFrame,text="Drinks",
+                bg="#f9f1f1",fg="black",
+                font=("BookmanOldStyle",40))
+
+    drinkVar = IntVar()
+    rad_mimosa = Radiobutton(selectionFrame, text="Virgin Mimosa", variable=drinkVar, value=1)
+    rad_mimosa.config(bg="#f9f1f1")
+    rad_sangria = Radiobutton(selectionFrame, text="Virgin Sangria", variable=drinkVar, value=2)
+    rad_sangria.config(bg="#f9f1f1")
+    rad_wine = Radiobutton(selectionFrame, text="Virgin Wine", variable=drinkVar, value=3)
+    rad_wine.config(bg="#f9f1f1")
+    rad_margarita = Radiobutton(selectionFrame, text="Virgin Margarita", variable=drinkVar, value=4)
+    rad_margarita.config(bg="#f9f1f1")
+
+    def afterDrink():
+        afterBtnDrink.destroy()
+        main_title.pack(anchor=CENTER)
+        rad_chicken.pack(anchor=CENTER)
+        rad_fish.pack(anchor=CENTER)
+        rad_beef.pack(anchor=CENTER)
+        main_title.pack(anchor=CENTER)
+        afterBtnMain.pack(anchor=S)
+    
+    afterBtnDrink = Button(selectionFrame, text="Next", command=afterDrink)
+# Drinks here
+    drinks_title = Label(selectionFrame,text="Drinks",
+                bg="#f9f1f1",fg="black",
+                font=("BookmanOldStyle",40))
+
+    drinkVar = IntVar()
+    rad_mimosa = Radiobutton(selectionFrame, text="Virgin Mimosa", variable=drinkVar, value=1)
+    rad_mimosa.config(bg="#f9f1f1")
+    rad_sangria = Radiobutton(selectionFrame, text="Virgin Sangria", variable=drinkVar, value=2)
+    rad_sangria.config(bg="#f9f1f1")
+    rad_wine = Radiobutton(selectionFrame, text="Virgin Wine", variable=drinkVar, value=3)
+    rad_wine.config(bg="#f9f1f1")
+    rad_margarita = Radiobutton(selectionFrame, text="Virgin Margarita", variable=drinkVar, value=4)
+    rad_margarita.config(bg="#f9f1f1")
+
+    def afterDrink():
+        afterBtnDrink.destroy()
+        main_title.pack(anchor=CENTER)
+        rad_chicken.pack(anchor=CENTER)
+        rad_fish.pack(anchor=CENTER)
+        rad_beef.pack(anchor=CENTER)
+        main_title.pack(anchor=CENTER)
+        afterBtnMain.pack(anchor=S)
+    
+    afterBtnDrink = Button(selectionFrame, text="Next", command=afterDrink)
+
+    # MAIN COURSE
+
+    main_title = Label(selectionFrame,text="Main Courses",
+                bg="#f9f1f1",fg="black",
+                font=("BookmanOldStyle",40)) # this could really be any font tbh, I couldn't find an appealing one
+
+    appVar = IntVar()
+    rad_chicken = Radiobutton(selectionFrame, text="Fried Chicken", variable=appVar, value=1)
+    rad_chicken.config(bg="#f9f1f1")
+    rad_fish = Radiobutton(selectionFrame, text="Baked Salmon", variable=appVar, value=2)
+    rad_fish.config(bg="#f9f1f1")
+    rad_beef = Radiobutton(selectionFrame, text="Filet Mignon", variable=appVar, value=3)
+    rad_beef.config(bg="#f9f1f1")
+
+    def afterMain():
+        afterBtnMain.destroy()
+        dessert_title.pack(anchor=CENTER)
+        rad_cake.pack(anchor=CENTER)
+        rad_cream.pack(anchor=CENTER)
+        dessert_title.pack(anchor=CENTER)
+        afterBtnDessert.pack(anchor=S)
+
+    afterBtnMain = Button(selectionFrame, text="Next", command=afterMain)
+
+    # DESSERTS
+
+    dessert_title = Label(selectionFrame,text="Dessert",
+                bg="#f9f1f1",fg="black",
+                font=("BookmanOldStyle",40))
+    appVar = IntVar()
+    rad_cake = Radiobutton(selectionFrame, text="Double Chocolate Cake", variable=appVar, value=1)
+    rad_cake.config(bg="#f9f1f1")
+    rad_cream = Radiobutton(selectionFrame, text="Vanilla Ice Cream", variable=appVar, value=2)
+    rad_cream.config(bg="#f9f1f1")
+
+    def afterDessert(): # the final button to display pop up window of food
+        afterBtnMain.destroy()
+
+    afterBtnDessert = Button(selectionFrame, text="Order", command=afterDessert)
+    
+# 1.2 Function --- Frame transition to selection screen
+def nextPage():
+    global selectionFrame
+    selectionFrame.tkraise()
+    selectionFrame = tk.Frame(bg="#F1F1E3", padx=5, pady=5)
+    selectionFrame.place(x=0, y=0, width=500, height=600)
+    nextContent()
+    
+    
+# 1.3 Screen Code labels, buttons, more
+mainLabel = Label(text="",bg="black",font=("AppleMyungjo", 30), width=25, height = 3)
+mainLabel.place(anchor="nw")
+mainLabel2 = Label(text="\nThe Dinner Spot",fg="#F1F1E3",bg="black",font=("Beirut", 30))
+mainLabel2.pack()
+
+mainButton = Button(mainScreen, text="CONTINUE",highlightbackground="#343030",bg="#343030",
+fg="pink",font=("Arial Black", 10),height=2, command = nextPage)
+mainButton.pack()
+
+# 2.1 Frame page 2 creation
+selectionFrame = tk.Frame(bg="#F1F1E3", padx=5, pady=5)
+selectionFrame.place(x=0, y=0, width=0, height=0)
