@@ -150,7 +150,7 @@ rad_oysters = Radiobutton(dinnerMenu, text="Raw Oysters", variable=appVar, value
 rad_oysters.config(bg="#f9f1f1")
 
 # MAIN COURSES RADIO BTN ---------------------------------
-main_title = Label(dinnerMenu,text="Main Courses",,text="Appetizers",
+main_title = Label(dinnerMenu,text="Main Courses",text="Appetizers",
                 bg="#f9f1f1",fg="black",
                 font=("BookmanOldStyle",20)) 
 appVar = IntVar()
