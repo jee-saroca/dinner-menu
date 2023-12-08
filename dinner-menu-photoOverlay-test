@@ -1,0 +1,30 @@
+from tkinter import *
+from tkinter import ttk
+from PIL import Image, ImageTk
+#Create an instance of Tkinter frame
+
+#Set the geometry of Tkinter frame
+
+
+
+dinnerTable=Tk()
+dinnerTable.geometry("459x612")
+dinnerTable.title("")
+
+canvas = Canvas(dinnerTable,width=459,height=612)
+canvas.pack()
+table = (Image.open("table.png"))
+tableImage = ImageTk.PhotoImage(table)
+canvas.create_image(230, 310, image=tableImage,anchor=CENTER)
+canvas.place(x=150,y=80)
+
+
+drink = (Image.open("mimosa.png"))
+drinkImage = ImageTk.PhotoImage(drink)
+canvas.create_image(231,315,image=drinkImage,anchor=CENTER)
+canvas.place(x=150,y=80)
+
+
+
+
+dinnerTable.mainloop()
