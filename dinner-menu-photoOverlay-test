@@ -11,19 +11,38 @@ dinnerTable=Tk()
 dinnerTable.geometry("459x612")
 dinnerTable.title("")
 
+# TABLE BACKGROUND PLACEMENT
 canvas = Canvas(dinnerTable,width=459,height=612)
 canvas.pack()
 table = (Image.open("table.png"))
 tableImage = ImageTk.PhotoImage(table)
 canvas.create_image(230, 310, image=tableImage,anchor=CENTER)
-canvas.place(x=150,y=80)
 
+# DRINK PLACEMENT
+drinkPNG = (Image.open("mimosa.png"))
+resized_drink = drinkPNG.resize((60,120))
+drinkImage = ImageTk.PhotoImage(resized_drink)
+canvas.create_image(140,365,image=drinkImage,anchor=CENTER)
 
-drink = (Image.open("mimosa.png"))
-drinkImage = ImageTk.PhotoImage(drink)
-canvas.create_image(231,315,image=drinkImage,anchor=CENTER)
-canvas.place(x=150,y=80)
+# APPETIZER PLACEMENT
+appPNG = (Image.open("wings.png"))
+resized_app = appPNG.resize((100,100))
+appImage = ImageTk.PhotoImage(resized_app)
+canvas.create_image(330,390,image=appImage,anchor=CENTER)
 
+# MAIN COURSE PLACEMENT
+mainPNG = (Image.open("chicken.png"))
+resized_main = mainPNG.resize((175,175))
+mainImage = ImageTk.PhotoImage(resized_main)
+canvas.create_image(230,450,image=mainImage,anchor=CENTER)
+
+# DESSERT PLACEMENT
+dessertPNG = (Image.open("cake.png"))
+resized_main = dessertPNG.resize((100,100))
+dessertImage = ImageTk.PhotoImage(resized_main)
+canvas.create_image(231,315,image=dessertImage,anchor=CENTER)
+
+canvas.place(x=0,y=0)
 
 
 
